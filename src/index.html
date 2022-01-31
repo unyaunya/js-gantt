@@ -1,0 +1,82 @@
+<!doctype html>
+ 
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <title>準天頂PRSサブシステム工程表</title>
+    <meta name="description" content="${description}" />
+    
+    <!-- jQuery -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+    <!-- Flappe-Gantt -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.min.js"></script>
+
+    <!-- <style>${style}</style> -->
+    <script>
+      $( function() {
+        $( "#menu" ).menu();
+      } );
+      </script>
+      <style>
+      .ui-menu { width: 150px; }
+      .details-container {
+        width: 300px;
+        color: #dfe2e5;
+        padding-left: 10px;
+      }
+      a {
+        color: #dfe2e5;
+      }
+      </style>    
+  </head>
+  <body>
+    <div class="body">
+      <div class="north">
+        <!-- タイトル -->
+        <h1>準天頂PRSサブシステム工程表</h1>
+        <p></p>
+        <!-- メニュー -->
+        <ul id="menu">
+          <li><div>ファイル</div>
+            <ul>
+              <li><a href="javascript:openFile()">開く…</a></li>
+              <li><a href="download.json" download>上書き保存</a></li>
+              <li><a href="javascript:saveFileAs()">名前をつけて保存…</a></li>
+            </ul>
+          </li>
+          <li><div>表示期間</div>
+            <ul>
+              <li><a href="javascript:viewMonth()">月</a></li>
+              <li><a href="javascript:viewWeek()">週</a></li>
+              <li><a href="javascript:viewDay()">日</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- ファイル入力フォーム -->
+        <form id="myform">
+          <input id="myfile" type="file" />
+        </form>
+      </div>
+      <div class="main">
+        <div class="west"></div>
+        <div class="content">
+          <div class='gantt-wrap'>
+            <svg id="gantt"></svg>
+          </div>
+        </div>
+        <div class="east"></div>
+      </div>
+      </div>
+      <div class="south"></div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
+
